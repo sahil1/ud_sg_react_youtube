@@ -2,6 +2,8 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
+import './style/style.css';
+import registerServiceWorker from './registerServiceWorker';
 
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
@@ -35,7 +37,7 @@ class App extends Component {
       selectedVideo: null
     };
 
-    this.videoSearch('Vidhi Baheti');
+    this.videoSearch('Sachin Tendulkar');
 
     // YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
     //   this.setState({
@@ -71,4 +73,5 @@ class App extends Component {
 }
 
 // Take component's generated HTML and put it on the page (in the DOM)
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
