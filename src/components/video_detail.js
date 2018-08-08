@@ -2,7 +2,13 @@ import React from 'react';
 
 const VideoDetail = ({video}) => {
   if(!video){
-    return <div>Loading.. </div>;
+    return (
+      <div>
+        <div>Video Loading...</div>
+        <div>If running on remote server or Git Pages Allow-Control-Allow-Origin: *</div>
+        <div>Enable CORS plugin for site to load</div>
+      </div>
+    );
   }
   const videoId = video.id.videoId;
   //const url = 'https://www.youtube.com/embed/' + videoId;
