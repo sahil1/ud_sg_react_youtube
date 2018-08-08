@@ -3,6 +3,7 @@ pages:
   script:
   - mkdir .public
   - cp -r * .public
+  - npm install
   - mv .public public
   artifacts:
     paths:
