@@ -1,18 +1,23 @@
-image: node:latest # can be upgraded, depending on your node version used
+image: node:latest
 
-pages:
-  cache:
-    paths:
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
     - node_modules/
 
+before_script:
+  - npm install
+
+pages:
   stage: deploy
   script:
+  - mkdir .public
+  - cp -r * .public
   - npm install
-  - npm run build
-  - rm -rf public
-  - mv build public
+  - mv .public public
   artifacts:
     paths:
-    - public # mandatory, other folder won't work
+    - public
   only:
-  - master # or dev, the branch you want to publish
+  - master
