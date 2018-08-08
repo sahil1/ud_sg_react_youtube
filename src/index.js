@@ -35,7 +35,7 @@ class App extends Component {
       selectedVideo: null
     };
 
-    this.videoSearch('surfboards');
+    this.videoSearch('Vidhi Baheti');
 
     // YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
     //   this.setState({
